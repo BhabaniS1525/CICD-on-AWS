@@ -1,4 +1,4 @@
-# VProfile — AWS CI/CD and Selenium Automation
+# 🚀 VProfile — AWS CI/CD and Selenium Automation
 
 This repository contains a complete **Continuous Integration (CI)** and **Continuous Delivery (CD)** pipeline for the **VProfile web application**, built entirely on **AWS-managed services** with no EC2 server management required.
 
@@ -9,7 +9,7 @@ The project demonstrates:
 - **Functional testing** via Selenium automation scripts with TestNG framework
 - **PaaS/SaaS-only** deployment model (no manual EC2 management)
 
-## Table of Contents
+## 📋 Table of Contents
 
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
@@ -19,9 +19,9 @@ The project demonstrates:
 - [Selenium Testing](#selenium-testing)
 - [AWS Environment Setup](#aws-environment-setup)
 
-## Quick Start
+## 🏃 Quick Start
 
-### Prerequisites
+### ✅ Prerequisites
 
 - **Java**: JDK 17 (Corretto 17 as per buildspec)
 - **Maven**: 3.9.4 or later
@@ -29,7 +29,7 @@ The project demonstrates:
 - **Browser**: Chrome with matching ChromeDriver for Selenium tests
 - **Code Artifact Access**: AWS CodeArtifact credentials for Maven dependency pulling
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 06_vprofile_aws_cicd/
@@ -89,9 +89,9 @@ The project demonstrates:
 └── README.md                     # This file
 ```
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-### Application Stack
+### ☕ Application Stack
 
 | Component           | Version       | Purpose                      |
 | ------------------- | ------------- | ---------------------------- |
@@ -106,7 +106,7 @@ The project demonstrates:
 | JUnit               | 4.13.2        | Unit testing                 |
 | Logback             | 1.5.6         | Logging framework            |
 
-### CI/CD Tools & Services
+### 🔧 CI/CD Tools & Services
 
 | Service                 | Purpose                                      |
 | ----------------------- | -------------------------------------------- |
@@ -117,7 +117,7 @@ The project demonstrates:
 | **AWS Parameter Store** | Secrets & configuration management           |
 | **AWS SNS**             | Pipeline notifications                       |
 
-### Testing & Deployment
+### 🧪 Testing & Deployment
 
 | Tool                      | Purpose                       |
 | ------------------------- | ----------------------------- |
@@ -128,9 +128,9 @@ The project demonstrates:
 | **Amazon RDS**            | Managed MySQL database        |
 | **AWS Security Groups**   | Network access control        |
 
-## CI Pipeline
+## 🔄 CI Pipeline
 
-### Overview
+### 👀 Overview
 
 The CI pipeline automatically triggers on code commits and performs:
 
@@ -139,9 +139,9 @@ The CI pipeline automatically triggers on code commits and performs:
 3. **Quality Gate**: Fails the build if SonarCloud quality gate returns `ERROR`
 4. **Notifications**: SNS sends results to developers via email/Slack
 
-## CD Pipeline
+## 📦 CD Pipeline
 
-### Overview
+### 👀 Overview
 
 The CD pipeline deploys the application to AWS Elastic Beanstalk after CI passes:
 
@@ -150,7 +150,9 @@ The CD pipeline deploys the application to AWS Elastic Beanstalk after CI passes
 3. **Deploy**: Push to Elastic Beanstalk environment
 4. **Post-Deploy Testing**: Run Selenium tests against live environment
 
-### Deployment Architecture (PaaS/SaaS)
+### 🏗️ Deployment Architecture (PaaS/SaaS)
+
+![architecture](CD/Resources/Images/aws_cicd_architecture.drawio.svg)
 
 ```
 Developer Commit
@@ -170,9 +172,9 @@ SNS Notification
 
 **No EC2 instance management required** — Elastic Beanstalk handles scaling, patching, and updates automatically.
 
-## Selenium Testing
+## 🌐 Selenium Testing
 
-### Functional Test Suite
+### 🤖 Functional Test Suite
 
 The Selenium automation validates the deployed application in a real browser:
 
@@ -186,7 +188,7 @@ The Selenium automation validates the deployed application in a real browser:
 - `ChromeDriver/` — Chrome WebDriver binary
 - `test-output/` — Execution reports
 
-### Test Reports
+### 📊 Test Reports
 
 After execution, reports are generated in:
 
@@ -195,7 +197,7 @@ After execution, reports are generated in:
 - `test-output/junitreports/` — JUnit format reports
 - `test-output/CI_CD_TEST/` — Pipeline execution results
 
-### Post-Deployment Testing
+### ✔️ Post-Deployment Testing
 
 In the CD pipeline (see [07_testing_job.md](CD/Deployment/07_testing_job.md)), a CodeBuild job:
 
@@ -204,13 +206,13 @@ In the CD pipeline (see [07_testing_job.md](CD/Deployment/07_testing_job.md)), a
 3. Runs Selenium tests against the deployed application
 4. Reports results back to the pipeline
 
-## AWS Environment Setup
+## ☁️ AWS Environment Setup
 
-### Detailed Setup
+### 🔨 Detailed Setup
 
 Follow the step-by-step guides in [CD/Deployment/](CD/Deployment/) for complete AWS resource configuration.
 
-## Key Contacts & Resources
+## 📚 Key Contacts & Resources
 
 - **SonarCloud Docs**: https://docs.sonarcloud.io
 - **AWS CodeBuild Docs**: https://docs.aws.amazon.com/codebuild
