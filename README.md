@@ -152,7 +152,7 @@ The CD pipeline deploys the application to AWS Elastic Beanstalk after CI passes
 
 ### 🏗️ Deployment Architecture (PaaS/SaaS)
 
-![architecture](CD/Resources/Images/aws_cicd_architecture.drawio.svg)
+![architecture](CD/Resources/Images/aws_cicd_architecture.drawio.png)
 
 ```
 Developer Commit
